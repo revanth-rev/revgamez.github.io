@@ -1,0 +1,113 @@
+<html>
+	<head>
+		<title>Student Form</title>
+		<style>
+			form.Sreg{
+				background-image:url('capture.jpg');
+			}
+		</style>
+		<script>
+				function validateForm(){
+					
+					var x = document.forms["Sreg"]["fname"].value;
+					if(x==""){
+						alert("Oops..!,You forgot to fill FirstName");
+						return false;
+					}
+					
+					var x = document.forms["Sreg"]["lname"].value;
+					if(x==""){
+						alert("Oops..!,You forgot to fill LasttName");
+						return false;
+					}
+					
+					var x = document.forms["Sreg"]["rno"].value;
+					if(x.length<10){
+						alert("Oops..!,You forgot to fill Roll Number");
+						return false;
+					}
+					else if(x==""){
+						alert("Oops..!,You forgot to fill Roll Number");
+						return false;
+					}
+					
+					var x = document.forms["Sreg"]["tel"].value;
+					if(x.length<10){
+						alert("Oops..!,You forgot to fill Phone Number");
+						return false;
+					}
+					else if(x==""){
+						alert("Oops..!,You forgot to fill Phone Number");
+						return false;
+					}
+					
+					var x = document.forms["Sreg"]["email"].value;
+					var at = x.indexOf("@");
+					var dot = x.LastIndexOf(".");
+					if(at<1||dot<at+2||dot+2>=x.length){
+						alert("Oops..!,Not a valid email address");
+						return false;
+					}
+					
+					var x = document.forms["Sreg"]["hstl"].value;
+					if(x==""){
+						alert("Oops..!,You forgot to choose details of hostel");
+						return false;
+					}
+					
+					var x = document.forms["Sreg"]["adrs"].value;
+					if(x==""){
+						alert("Oops..!,You forgot to fill Address");
+						return false;
+					}
+					
+				}	
+		</script>
+	</head>
+	<body bgcolor="#ffff99">
+		<h2 align="center">Student Registration Form</h2>
+		<form name="Sreg" method="post" action="form2.html" onsubmit="return validateForm()" >
+			<table align="center">
+				<tr>
+					<td><b>First Name:</b></td>
+					<td><input type="text" name="fname"><br><br></td>
+				</tr>
+				<tr>
+					<td><b>Last Name:</b></td>
+					<td><input type="text" name="lname"><br><br></td>
+				</tr>
+				<tr>
+					<td><b>Gender</b></td>
+					<td><input type="radio" name="gender" value="male" checked>Male &nbsp;<input type="radio" name="gender" value="female">Female</td>
+				</tr>
+				<tr>
+					<td><b>Register No:</b></td>
+					<td><input type="text" name="rno"><br><br></td>
+				</tr>
+				<tr>
+					<td><b>Phone:</b></td>
+					<td><input type="tel" name="tel"><br><br></td>
+				</tr>
+				<tr>
+					<td><b>Email ID:</b></td>
+					<td><input type="email" name="email"><br><br></td>
+				</tr>
+				<tr>
+					<td><b>Select</b></td>
+					<td><select size="1" name="hstl">
+						<option value="DayScholar">Day Scholar</option>
+						<option value="Hostel">Hostel</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><b>Address</b></td>
+					<td><textarea name="adrs" rows="4" cols="20"></textarea></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td align="center"><input type="submit" value="SUBMIT"></td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>
